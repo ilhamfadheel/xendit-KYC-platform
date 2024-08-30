@@ -1,0 +1,32 @@
+[
+  {
+    "full_name": "Alice Johnson"
+  },
+  {
+    "address": "Jl. Sudirman No. 123, Jakarta Selatan"
+  },
+  {
+    "phone_number": "+6287654321098"
+  },
+  {
+    "email": "ilham@ilhamfadhil.com"
+  },
+  {
+    "identification_number": "3173082309880001"
+  },
+  {
+    "email": "suspicious.activity@example.com"
+  },
+  {
+    "address": "Alamat Rumah, Richtown, Indonesia"
+  },
+  {
+    "full_name": "John Doe"
+  },
+  {
+    "phone_number": "+6281234567890"
+  },
+  {
+    "identification_number": "3173082309880002"
+  }
+]

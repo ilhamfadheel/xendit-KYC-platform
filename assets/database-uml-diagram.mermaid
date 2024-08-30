@@ -1,0 +1,60 @@
+erDiagram
+    PARTNERS ||--o{ CUSTOMERS : has
+    PARTNERS {
+        UUID id PK
+        VARCHAR name
+        VARCHAR webhook_url
+        FLOAT prediction_high_threshold
+        FLOAT prediction_low_threshold
+        BOOLEAN aml_state
+        BOOLEAN cft_state
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    CUSTOMERS ||--o{ SUBMISSIONS : has
+    CUSTOMERS {
+        UUID id PK
+        UUID partner_id FK
+        VARCHAR email
+        VARCHAR full_name
+        VARCHAR(9) gender
+        VARCHAR address
+        VARCHAR phone_number
+        CHAR(16) identification_number
+        TEXT identification_picture
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    SUBMISSIONS ||--o| LIVENESS_CHECKS : has
+    SUBMISSIONS ||--o| AML_CHECKS : has
+    SUBMISSIONS ||--o| CFT_CHECKS : has
+    SUBMISSIONS {
+        UUID id PK
+        UUID customer_id FK
+        ENUM(submission_status) status
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    LIVENESS_CHECKS {
+        UUID id PK
+        UUID submission_id FK
+        TEXT self_picture
+        VARCHAR score
+        BOOLEAN passed
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    AML_CHECKS {
+        UUID id PK
+        UUID submission_id FK
+        BOOLEAN passed
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    CFT_CHECKS {
+        UUID id PK
+        UUID submission_id FK
+        BOOLEAN passed
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kyc-platform-config
+data:
+  DB_HOST: kyc-postgres-service
+  DB_PORT: "5432"
+  DB_NAME: kyc_database
+  NODE_ENV: production
+  PORT: "3000"
